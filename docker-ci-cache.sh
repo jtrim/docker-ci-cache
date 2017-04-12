@@ -41,7 +41,7 @@ for image_directive in $IMAGES; do
     if echo $image_directive | grep :: > /dev/null; then
         command=$@
     else
-        command="docker run $image echo -"
+        command="docker run --rm $image echo -"
     fi
 
     image_filename=$(echo $image | tr '/' '-' | tr '\\' '-').tar
