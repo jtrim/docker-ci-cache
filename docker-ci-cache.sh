@@ -27,11 +27,7 @@ while [[ "$1" != "" && "$1" != "--" ]]; do
     shift
 done
 
-shift
-
-COMMAND=$@
-
-# echo $IMAGES | tr ' ' '\n' | xargs -I{} bash -c 'echo Foo: {}'
+if [[ "$1" == "--" ]]; then shift; fi
 
 mkdir -p ${DOCKER_CACHE_DIR}
 
